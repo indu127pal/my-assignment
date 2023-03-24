@@ -1,0 +1,217 @@
+{
+  "contractWorkers": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "Software Engineer",
+      "startDate": "2023-01-01",
+      "employeeNumber": "CW1001"
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "Project Manager",
+      "startDate": "2023-01-15",
+      "employeeNumber": "CW1002"
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Smith",
+      "role": "Data Analyst",
+      "startDate": "2023-02-01",
+      "employeeNumber": "CW1003"
+    },
+    {
+      "id": 4,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "role": "QA Engineer",
+      "startDate": "2023-01-30",
+      "employeeNumber": "CW1004"
+    },
+    {
+      "id": 5,
+      "firstName": "William",
+      "lastName": "Brown",
+      "role": "DevOps Engineer",
+      "startDate": "2023-02-15",
+      "employeeNumber": "CW1005"
+    },
+    {
+      "id": 6,
+      "firstName": "Olivia",
+      "lastName": "Jones",
+      "role": "UX Designer",
+      "startDate": "2023-03-01",
+      "employeeNumber": "CW1006"
+    },
+    {
+      "id": 7,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "Project Manager",
+      "startDate": "2023-01-15",
+      "employeeNumber": "CW1007"
+    },
+    {
+      "id": 8,
+      "firstName": "Michael",
+      "lastName": "Smith",
+      "role": "Data Analyst",
+      "startDate": "2023-02-01",
+      "employeeNumber": "CW1008"
+    },
+    {
+      "id": 9,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "role": "QA Engineer",
+      "startDate": "2023-01-30",
+      "employeeNumber": "CW1009"
+    },
+    {
+      "id": 10,
+      "firstName": "William",
+      "lastName": "Brown",
+      "role": "DevOps Engineer",
+      "startDate": "2023-02-15",
+      "employeeNumber": "CW10010"
+    },
+    {
+      "id": 11,
+      "firstName": "Olivia",
+      "lastName": "Jones",
+      "role": "UX Designer",
+      "startDate": "2023-03-01",
+      "employeeNumber": "CW10011"
+    },
+    {
+      "id": 12,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "Project Manager",
+      "startDate": "2023-01-15",
+      "employeeNumber": "CW10012"
+    },
+    {
+      "id": 13,
+      "firstName": "Michael",
+      "lastName": "Smith",
+      "role": "Data Analyst",
+      "startDate": "2023-02-01",
+      "employeeNumber": "CW10013"
+    },
+    {
+      "id": 14,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "role": "QA Engineer",
+      "startDate": "2023-01-30",
+      "employeeNumber": "CW10014"
+    },
+    {
+      "id": 15,
+      "firstName": "William",
+      "lastName": "Brown",
+      "role": "DevOps Engineer",
+      "startDate": "2023-02-15",
+      "employeeNumber": "CW10015"
+    },
+    {
+      "id": 16,
+      "firstName": "Olivia",
+      "lastName": "Jones",
+      "role": "UX Designer",
+      "startDate": "2023-03-01",
+      "employeeNumber": "CW10016"
+    }
+  ],
+
+  "serviceContracts": [
+    {
+      "id": 1,
+      "contractNumber": "SC1001",
+      "status": "active",
+      "ownerId": 1,
+      "ownerName": "Jone"
+    },
+    {
+      "id": 2,
+      "contractNumber": "SC1002",
+      "status": "inactive",
+      "ownerId": 2,
+      "ownerName": "James"
+    },
+    {
+      "id": 3,
+      "contractNumber": "SC1003",
+      "status": "approved",
+      "ownerId": 3,
+      "ownerName": "Brown"
+    },
+    {
+      "id": 4,
+      "contractNumber": "SC1004",
+      "status": "active",
+      "ownerId": 4,
+      "ownerName": "Jake"
+    },
+    {
+      "id": 5,
+      "contractNumber": "SC1005",
+      "status": "draft",
+      "ownerId": 5,
+      "ownerName": "James"
+    },
+    {
+      "id": 6,
+      "contractNumber": "SC1006",
+      "status": "active",
+      "ownerId": 6,
+      "ownerName": "Brown"
+    },
+    {
+      "id": 7,
+      "contractNumber": "SC1007",
+      "status": "inactive",
+      "ownerId": 7,
+      "ownerName": "Brown"
+    }
+  ],
+
+  "workerContractMappings": [
+    {
+      "id": 1,
+      "employeeNumber": "CW1001",
+      "contractNumber": "SC1001",
+      "allocation": 100
+    },
+    {
+      "id": 2,
+      "employeeNumber": "CW1002",
+      "contractNumber": "SC1001",
+      "allocation": 100
+    },
+    {
+      "id": 3,
+      "employeeNumber": "CW1003",
+      "contractNumber": "SC1002",
+      "allocation": 100
+    },
+    {
+      "id": 4,
+      "employeeNumber": "CW1001",
+      "contractNumber": "SC1003",
+      "allocation": 100
+    },
+    {
+      "id": 5,
+      "employeeNumber": "CW1002",
+      "contractNumber": "SC1004",
+      "allocation": 100
+    }
+  ]
+}
