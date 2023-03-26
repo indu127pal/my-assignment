@@ -4,6 +4,7 @@ import MiniDrawer from '../../components/MiniDrawer';
 import Contracts from '../../components/contract'
 
 const ContractsPage = () => {
+  console.log("check the data")
   return (
     <main className={styles.main}>
       <MiniDrawer />
