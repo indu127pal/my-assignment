@@ -6,6 +6,7 @@
       "lastName": "Doe",
       "role": "Software Engineer",
       "startDate": "2023-01-01",
+      "email": "johnDoe@hotmail.com",
       "employeeNumber": "CW1001"
     },
     {
@@ -14,6 +15,7 @@
       "lastName": "Doe",
       "role": "Project Manager",
       "startDate": "2023-01-15",
+      "email": "johnDoe@thkhk.com",
       "employeeNumber": "CW1002"
     },
     {
@@ -21,6 +23,7 @@
       "firstName": "Michael",
       "lastName": "Smith",
       "role": "Data Analyst",
+      "email": "johnDoe@theatlantic.com",
       "startDate": "2023-02-01",
       "employeeNumber": "CW1003"
     },
@@ -29,6 +32,7 @@
       "firstName": "Emily",
       "lastName": "Johnson",
       "role": "QA Engineer",
+      "email": "johnDoe@theatlantic.com",
       "startDate": "2023-01-30",
       "employeeNumber": "CW1004"
     },
@@ -37,6 +41,7 @@
       "firstName": "William",
       "lastName": "Brown",
       "role": "DevOps Engineer",
+      "email": "johnDoe@theatlantic.com",
       "startDate": "2023-02-15",
       "employeeNumber": "CW1005"
     },
@@ -45,6 +50,7 @@
       "firstName": "Olivia",
       "lastName": "Jones",
       "role": "UX Designer",
+      "email": "johnDoe@theatlantic.com",
       "startDate": "2023-03-01",
       "employeeNumber": "CW1006"
     },
@@ -53,6 +59,7 @@
       "firstName": "Jane",
       "lastName": "Doe",
       "role": "Project Manager",
+      "email": "johnDoe@theatlantic.com",
       "startDate": "2023-01-15",
       "employeeNumber": "CW1007"
     },
@@ -61,6 +68,7 @@
       "firstName": "Michael",
       "lastName": "Smith",
       "role": "Data Analyst",
+      "email": "Michael@theatlantic.com",
       "startDate": "2023-02-01",
       "employeeNumber": "CW1008"
     },
@@ -69,6 +77,7 @@
       "firstName": "Emily",
       "lastName": "Johnson",
       "role": "QA Engineer",
+      "email": "Johnson@theatlantic.com",
       "startDate": "2023-01-30",
       "employeeNumber": "CW1009"
     },
@@ -77,6 +86,7 @@
       "firstName": "William",
       "lastName": "Brown",
       "role": "DevOps Engineer",
+      "email": "William@theatlantic.com",
       "startDate": "2023-02-15",
       "employeeNumber": "CW10010"
     },
@@ -85,6 +95,7 @@
       "firstName": "Olivia",
       "lastName": "Jones",
       "role": "UX Designer",
+      "email": "JonesOlivia@theatlantic.com",
       "startDate": "2023-03-01",
       "employeeNumber": "CW10011"
     },
@@ -93,6 +104,7 @@
       "firstName": "Jane",
       "lastName": "Doe",
       "role": "Project Manager",
+      "email": "johnDoe@gmail.com",
       "startDate": "2023-01-15",
       "employeeNumber": "CW10012"
     },
@@ -101,6 +113,7 @@
       "firstName": "Michael",
       "lastName": "Smith",
       "role": "Data Analyst",
+      "email": "Smith@theatlantic.com",
       "startDate": "2023-02-01",
       "employeeNumber": "CW10013"
     },
@@ -109,6 +122,7 @@
       "firstName": "Emily",
       "lastName": "Johnson",
       "role": "QA Engineer",
+      "email": "cgorrick2@example.com",
       "startDate": "2023-01-30",
       "employeeNumber": "CW10014"
     },
@@ -117,71 +131,151 @@
       "firstName": "William",
       "lastName": "Brown",
       "role": "DevOps Engineer",
+      "email": "Brown@gmail.com",
       "startDate": "2023-02-15",
       "employeeNumber": "CW10015"
     },
     {
       "id": 16,
-      "firstName": "Olivia",
-      "lastName": "Jones",
-      "role": "UX Designer",
-      "startDate": "2023-03-01",
+      "firstName": "Indu",
+      "lastName": "Pal",
+      "role": "Software Engineer",
+      "startDate": "20/05/2002",
+      "email": "indu.palo69696@gmail.com",
       "employeeNumber": "CW10016"
+    },
+    {
+      "id": 17,
+      "firstName": "Indu",
+      "lastName": "Pal",
+      "role": "Software Engineer",
+      "startDate": "20/05/2002",
+      "email": "johnDoe@thkhk.com",
+      "employeeNumber": "CW10017"
     }
   ],
-
   "serviceContracts": [
     {
       "id": 1,
-      "contractNumber": "SC1001",
-      "status": "active",
+      "ownerName": "Jone",
       "ownerId": 1,
-      "ownerName": "Jone"
+      "status": "active",
+      "email": "johnDoe12@thkhk.com",
+      "contractNumber": "SC1001"
     },
     {
       "id": 2,
       "contractNumber": "SC1002",
       "status": "inactive",
       "ownerId": 2,
-      "ownerName": "James"
+      "ownerName": "James",
+      "email": "James@thkhk.com"
     },
     {
       "id": 3,
       "contractNumber": "SC1003",
       "status": "approved",
       "ownerId": 3,
-      "ownerName": "Brown"
+      "ownerName": "Brown",
+      "email": "Brown@thkhk.com"
     },
     {
       "id": 4,
       "contractNumber": "SC1004",
       "status": "active",
       "ownerId": 4,
-      "ownerName": "Jake"
+      "ownerName": "Jake",
+      "email": "Jake@thkhk.com"
     },
     {
       "id": 5,
       "contractNumber": "SC1005",
       "status": "draft",
       "ownerId": 5,
-      "ownerName": "James"
+      "ownerName": "James",
+      "email": "James123@thkhk.com"
     },
     {
       "id": 6,
       "contractNumber": "SC1006",
-      "status": "active",
+      "status": "approved",
       "ownerId": 6,
-      "ownerName": "Brown"
+      "ownerName": "Brown",
+      "email": "johBrownnDoe@thkhk.com"
     },
     {
       "id": 7,
       "contractNumber": "SC1007",
       "status": "inactive",
       "ownerId": 7,
-      "ownerName": "Brown"
+      "ownerName": "Brown",
+      "email": "johnDoe@thkhk.com"
+    },
+    {
+      "id": 8,
+      "ownerName": "Jacab",
+      "ownerId": 8,
+      "status": "active",
+      "email": "jacab123@gmail.com",
+      "contractNumber": "SC1008"
+    },
+    {
+      "id": 9,
+      "ownerName": "Paul",
+      "ownerId": 9,
+      "status": "approved",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC1009"
+    },
+    {
+      "id": 10,
+      "ownerName": "Paul",
+      "ownerId": 10,
+      "status": "inactive",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10010"
+    },
+    {
+      "id": 11,
+      "ownerName": "Paul",
+      "ownerId": 11,
+      "status": "draft",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10011"
+    },
+    {
+      "id": 12,
+      "ownerName": "Pau ",
+      "ownerId": 12,
+      "status": "inactive",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10012"
+    },
+    {
+      "id": 13,
+      "ownerName": "Paul",
+      "ownerId": 13,
+      "status": "draft",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10013"
+    },
+    {
+      "id": 14,
+      "ownerName": "Paul James",
+      "ownerId": 14,
+      "status": "inactive",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10014"
+    },
+    {
+      "id": 15,
+      "ownerName": "Paul John",
+      "ownerId": 15,
+      "status": "active",
+      "email": "paul858@yahoo.com",
+      "contractNumber": "SC10015"
     }
   ],
-
   "workerContractMappings": [
     {
       "id": 1,

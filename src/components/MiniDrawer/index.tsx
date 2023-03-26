@@ -123,8 +123,11 @@ export default function MiniDrawer() {
           <Typography variant="h6" noWrap component="div">
             Intuit Service
           </Typography>
-          <Link href="\">
+          <Link href="/">
+          <section style={{ textAlign: "center", position: "absolute", right: "100px", bottom: "15px"}}>
+            <span style={{ fontSize: "18px"}}>Back to Home</span>
             <HomeIcon sx={{ marginLeft: '20px'}} fontSize="medium" />
+          </section>
           </Link>
         </Toolbar>
       </AppBar>

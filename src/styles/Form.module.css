@@ -1,80 +1,16 @@
-/* .container {
+.row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-.title {
-  margin-bottom: 1rem;
-}
-
-.form {
+.maincontainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
-
-.formcontrol {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-.formcontrol label {
-  color: #777;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.formcontrol input {
-  border: 2px solid #f0f0f0;
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.formcontrol input:focus {
-  outline: 0;
-  border-color: #777;
-}
-
-.formcontrol.success input {
-  border-color: var(--success-color);
-}
-
-.formcontrol.error input {
-  border-color: var(--error-color);
-}
-
-.formcontrol small {
-  color: var(--error-color);
-  font-weight: 400;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-}
-
-.formcontrol.error small {
-  visibility: visible;
-}
-
-.form button {
-  cursor: pointer;
-  background-color: #3498db;
-  border: 2px solid #3498db;
-  border-radius: 4px;
-  display: block;
-  color: #fff;
-  font-size: 16px;
-  padding: 10px;
-  margin-top: 20px;
-  width: 100%;
-} */
 
 .container {
   display: flex;
@@ -101,6 +37,7 @@
 
 .formcontrol {
   margin-bottom: 1rem;
+  width: 400px;
 }
 
 .formcontrol label {
@@ -147,18 +84,34 @@
 
 .button {
   cursor: pointer;
-  background-color: #3498db;
-  border: 2px solid #3498db;
+  background-color: var(--main-blue);
+  border: 2px solid var(--main-blue);
   border-radius: 4px;
   display: block;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   padding: 10px;
   margin-top: 20px;
-  max-width: 80%;
+  width: 80%;
+}
+
+.button:hover {
+  background-color: darkblue;
 }
 
 .success {
   margin-top: 0.5rem;
   font-size: 0.8rem;
+}
+
+.cancel {
+  padding: 2px;
+  text-align: center;
+  position: absolute;
+  right: 40px;
+  background: var(--main-blue);
+  font-weight: bold;
+  border: 1px solid var(--main-blue);
+  border-radius: 5px;
 }

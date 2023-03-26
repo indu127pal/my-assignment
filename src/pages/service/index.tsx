@@ -5,9 +5,9 @@ import Service from '../../components/service';
 
 const ServicePage = () => {
   return (
-    <main className={styles.main}>
+    <main style={{ textAlign: 'center' }}>
       <MiniDrawer />
-      <h1>Service Contracts Page</h1>
+      <h2>Service Contracts Page</h2>
       <Service />
     </main>
   );

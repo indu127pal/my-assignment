@@ -1,11 +1,24 @@
 import Head from 'next/head'
+import React, { useEffect } from 'react';
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import style from '@/styles/Form.module.css'
+import { useSelector, useDispatch } from 'react-redux';
+import Link from 'next/link';
+import { getContractsData } from '../store/actions/action';
+import { getServicesData } from '../store/actions/serviceAction';
 import MiniDrawer from '../components/MiniDrawer';
+import Card from '../components/common/card';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getContractsData());
+        dispatch(getServicesData());
+    }, [])
   return (
     <>
       <Head>
@@ -16,7 +29,26 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <MiniDrawer />
-        <h1>Dashboard Home Page</h1>
+          <h2>Dashboard Home Page</h2>
+          <section className={style.row}>
+            <Link href="/contract">
+              <div style={{marginBottom: "20px", width: '250px'}}>
+                <button type="button" 
+                  className={style.button}>
+                  Go to Contracts Table Data
+                </button>
+              </div>
+            </Link>
+            <Link href="/service">
+              <div style={{marginBottom: "20px", width: '250px'}}>
+                <button type="button" 
+                  className={style.button}>
+                  Go to Services Table Data
+                </button>
+              </div>
+            </Link>
+          </section>
+          <Card />
       </main>
     </>
   )
