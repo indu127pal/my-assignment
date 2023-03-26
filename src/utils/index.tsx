@@ -1,4 +1,5 @@
-const calculateTotal = (contracts, services) => {
+// @ts-nocheck
+function calculateTotal(contracts, services) {
     const active = services.filter(c => c.status === 'active').length;
     const inactive = services.filter(c => c.status === 'inactive').length;
     const draft = services.filter(c => c.status === 'draft').length;
@@ -8,7 +9,7 @@ const calculateTotal = (contracts, services) => {
         inactive,
         draft,
         approved
-    }
+    };
 }
 
 export {

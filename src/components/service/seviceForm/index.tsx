@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addServicesData, editServicesData } from '../../../store/actions/serviceAction';

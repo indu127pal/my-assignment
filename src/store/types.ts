@@ -1,7 +1,27 @@
-export interface RootObject {
-    contractWorkers: ContractWorker[]
-    serviceContracts: ServiceContract[]
-    workerContractMappings: WorkerContractMapping[]
+export interface RootState {
+    sampleData: {
+        contracts: ContractWorker[]
+        services: ServiceContract[]
+        workerContractMappings: WorkerContractMapping[]
+        showForm: Form
+        contractForm: Form
+        loading: boolean
+        error: string
+    }
+}
+
+export interface Form {
+    id: number
+    employeeNumber: string
+    firstName: string
+    lastName: string
+    role: string
+    startDate: string
+    contractNumber: string
+    email: string
+    status: string
+    ownerId: number
+    ownerName: string
 }
 
 export interface ContractWorker {
@@ -20,6 +40,7 @@ export interface ServiceContract {
     status: string
     ownerId: number
     ownerName: string
+    email: string
 }
 
 export interface WorkerContractMapping {

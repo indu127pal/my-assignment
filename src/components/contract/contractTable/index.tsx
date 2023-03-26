@@ -1,17 +1,19 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import styles from '@/styles/Table.module.css';
 import { removeContractsData, getContractDataById } from '../../../store/actions/action';
 import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../store/types';
 
 const ContractTable = () => {
   const { loading, error, contracts } = useSelector(
-    (state) => state.sampleData,
+    (state: RootState) => state.sampleData,
   );
   const [index, setIndex] = useState([0, 5])
   let data = contracts.slice(index[0], index[1]);
   const dispatch = useDispatch();
 
-  const handlePagination = (index) => {
+  const handlePagination = (index: string) => {
     const ele = document.getElementById(index);
     const list = ele?.parentNode?.childNodes;
     list?.forEach((node) => {

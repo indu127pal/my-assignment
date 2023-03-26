@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import styles from '@/styles/Card.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContractsData } from '../../../store/actions/action';
-import { getServicesData } from '../../../store/actions/serviceAction';
 import { calculateTotal } from '../../../utils';
+import { RootState } from '../../../store/types';
 import Box from './box';
 
 const Card = () => {
     const dispatch = useDispatch();
     const { loading, error, contracts, services } = useSelector(
-        (state) => state.sampleData,
+        (state: RootState) => state.sampleData,
       );
     console.log(loading, contracts, services)
     const { active = '', inactive = '', draft = '', approved = '' } = calculateTotal(contracts, services);

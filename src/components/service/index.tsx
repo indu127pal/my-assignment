@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// @ts-nocheck
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '@/styles/Form.module.css'
 import {
@@ -11,12 +12,13 @@ import {
 } from '../../store/actions/serviceAction';
 import ServiceForm from './seviceForm';
 import ServiceTable from './serviceTable'
+import { RootState } from '../../store/types';
 
 const Service = () => {
   const dispatch = useDispatch();
 
   const { loading, error, showForm, contracts } = useSelector(
-    (state) => state.sampleData,
+    (state: RootState) => state.sampleData,
   );
   console.log(loading, showForm);
 

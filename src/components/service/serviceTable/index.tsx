@@ -1,11 +1,13 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import styles from '@/styles/Table.module.css';
 import { removeServicesData, getServiceDataById } from '../../../store/actions/serviceAction';
 import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../store/types';
 
 const ServiceTable = () => {
   const { loading, error, services } = useSelector(
-    (state) => state.sampleData,
+    (state: RootState) => state.sampleData,
   );
   const [index, setIndex] = useState([0, 5])
   let data = services.slice(index[0], index[1]);

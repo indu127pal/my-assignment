@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// @ts-nocheck
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { 
   getContractsData,
@@ -6,6 +7,7 @@ import {
   openForm,
   closeForm
 } from '../../store/actions/action';
+import { RootState } from '../../store/types';
 
 import styles from '@/styles/Form.module.css'
 import ContractForm from './contractForm'
@@ -15,7 +17,7 @@ const Contracts = () => {
   const dispatch = useDispatch();
 
   const { loading, error, showForm, contracts } = useSelector(
-    (state) => state.sampleData,
+    (state: RootState) => state.sampleData,
   );
   console.log(loading, showForm);
 

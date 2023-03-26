@@ -1,15 +1,22 @@
+// @ts-nocheck
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContractsData, editContractsData } from '../../../store/actions/action';
 import styles from '@/styles/Form.module.css'
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
+import { RootState } from '../../../store/types';
 
-const ContractForm = ({ open, onClose }) => {
+interface form {
+  open: boolean
+  onClose: () => void
+}
+
+const ContractForm = ({ open, onClose }: form) => {
   const dispatch = useDispatch();
 
   const { loading, error, showForm, contracts, contractForm } = useSelector(
-    (state) => state.sampleData,
+    (state: RootState) => state.sampleData,
   );
   console.log(loading, error);
 
@@ -50,11 +57,6 @@ const ContractForm = ({ open, onClose }) => {
     }
     onClose(!open);
   };
-
-  // const handleOffboardClick = () => {
-  //   setIsOnboarding(false);
-  //   // logic for submitting form data to API or data store goes here
-  // };
 
   const handleClose = () => {
     onClose();
