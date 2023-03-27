@@ -3,6 +3,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 40px;
+  border: 1px solid lightgrey;
+  padding-left: 50px;
+  background-color: lightgrey;
+  z-index: 100;
 }
 
 .maincontainer {
@@ -76,7 +81,7 @@
   background-color: #0060df;
 }
 
-.error-message {
+.errorMessage {
   color: red;
   margin-top: 0.5rem;
   font-size: 0.8rem;

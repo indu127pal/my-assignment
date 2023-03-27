@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContractsData, editContractsData } from '../../../store/actions/action';
+import { checkEmail } from '../../../utils';
 import styles from '@/styles/Form.module.css'
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
@@ -18,19 +19,31 @@ const ContractForm = ({ open, onClose }: form) => {
   const { loading, error, showForm, contracts, contractForm } = useSelector(
     (state: RootState) => state.sampleData,
   );
-  console.log(loading, error);
 
   const [firstName, setFirstName] = useState('' || contractForm.firstName);
   const [lastName, setLastName] = useState('' || contractForm.lastName);
   const [role, setRole] = useState('' || contractForm.role);
   const [startDate, setStartDate] = useState('' || contractForm.startDate);
   const [email, setEmail] = useState('' || contractForm.email);
-  const [isEdit, setIsEdit] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const validateData = () => {
-    
+    if (!firstName || !lastName || !role || !startDate || !email) {
+      setErrorMsg('Please fill all the fields');
+      return false;
+    } else {
+      if (checkEmail(email)) {
+        setErrorMsg('Email-Id is not valid')
+        return false;
+      } else {
+        setErrorMsg('');
+        return true;
+      }
+    }
   }
   const handleOnboardClick = () => {
+    let valid = validateData();
+    if (!valid) return;
     let data;
     if (Object.keys(contractForm).length) {
       data = {
@@ -100,7 +113,7 @@ const ContractForm = ({ open, onClose }: form) => {
           <div className={styles.formcontrol}>
             <label htmlFor="startDate">Start Date</label>
             <input
-              type="text"
+              type="date"
               id="startDate"
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
@@ -109,11 +122,14 @@ const ContractForm = ({ open, onClose }: form) => {
           <div className={styles.formcontrol}>
             <label htmlFor="email">Email</label>
             <input
-              type="text"
+              type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </div>
+          <div className={styles.formcontrol}>
+            <label htmlFor="error" className={styles.errorMessage}>{errorMsg}</label>
           </div>
           <div className={styles.btncontainer}>
             <button type="button" className={styles.button} onClick={handleOnboardClick}>

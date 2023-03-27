@@ -5,19 +5,18 @@ import {
     OPEN_FORM,
     CLOSE_FORM,
     CLEAR_FORM,
-    GET_CONTRACT_SUCCESS,
-    POST_CONTRACT_SUCCESS,
-    DELETE_CONTRACT_SUCCESS,
-    EDIT_CONTRACT_SUCCESS,
-    GET_CONTRACT_BY_ID
+
+    GET_MAPPING_SUCCESS,
+    POST_MAPPING_SUCCESS,
+    DELETE_MAPPING_SUCCESS,
+    EDIT_MAPPING_SUCCESS,
+    GET_MAPPING_BY_ID
   } from "../constants";
   import axios from 'axios';
   
   // all the api endpoints
   
   const BASE_URL = "http://localhost:3030";
-  const contract_url = BASE_URL + "/contractWorkers/";
-  const service_url = BASE_URL + "/serviceContracts/";
   const mapping_url = BASE_URL + "/workerContractMappings/";
   
   export const clearForm = () => async (dispatch) => {
@@ -32,14 +31,13 @@ import {
     dispatch({ type: CLOSE_FORM });
   }
   
-  export const getContractsData = () => async (dispatch) => {
+  export const getMappingsData = () => async (dispatch) => {
     try {
       dispatch({ type: API_REQUEST });
-      const response = await axios.get(contract_url);
-      //console.log(response.data);
+      const response = await axios.get(mapping_url);
       
       dispatch({
-        type: GET_CONTRACT_SUCCESS,
+        type: GET_MAPPING_SUCCESS,
         payload: response.data,
       });
     } catch (error) {
@@ -50,19 +48,19 @@ import {
     }
   };
   
-  export const addContractsData = (data) => async (dispatch) => {
+  export const addMappingsData = (data) => async (dispatch) => {
     try {
       dispatch({
         type: API_REQUEST,
       });
       const response = await axios({
         method: 'post',
-        url: contract_url,
+        url: mapping_url,
         data: data
       });
-      console.log(response.data);
-      dispatch({ type: POST_CONTRACT_SUCCESS });
-      await dispatch(getContractsData());
+
+      dispatch({ type: POST_MAPPING_SUCCESS });
+      await dispatch(getMappingsData());
   
     } catch (error) {
       dispatch({
@@ -72,20 +70,20 @@ import {
     }
   };
   
-  export const removeContractsData = (id) => async (dispatch) => {
+  export const removeMappingsData = (id) => async (dispatch) => {
     try {
       dispatch({
         type: API_REQUEST,
       });
       const response = await axios({
         method: 'delete',
-        url: `${contract_url}/${id}`
+        url: `${mapping_url}/${id}`
       });
-      console.log(response.data);
+
       dispatch({
-        type: DELETE_CONTRACT_SUCCESS
+        type: DELETE_MAPPING_SUCCESS
       });
-      await dispatch(getContractsData());
+      await dispatch(getMappingsData());
   
     } catch (error) {
       dispatch({
@@ -95,7 +93,7 @@ import {
     }
   };
   
-  export const editContractsData = (id, contractForm) => async (dispatch) => {
+  export const editMappingsData = (id, contractForm) => async (dispatch) => {
     try {
       dispatch({
         type: API_REQUEST,
@@ -103,16 +101,15 @@ import {
       debugger;
       const response = await axios({
         method: 'put',
-        url: `${contract_url}/${id}`,
+        url: `${mapping_url}/${id}`,
         data: contractForm
       });
-      console.log(response.data);
   
       dispatch({
-        type: EDIT_CONTRACT_SUCCESS
+        type: EDIT_MAPPING_SUCCESS
       });
   
-      await dispatch(getContractsData());
+      await dispatch(getMappingsData());
     } catch (error) {
       dispatch({
         type: API_FAILURE,
@@ -121,7 +118,7 @@ import {
     }
   };
   
-  export const getContractDataById = (id) => async (dispatch) => {
+  export const getMappingDataById = (id) => async (dispatch) => {
     try {
       dispatch({
         type: API_REQUEST,
@@ -129,13 +126,11 @@ import {
       debugger;
       const response = await axios({
         method: 'get',
-        url: `${contract_url}/${id}`,
+        url: `${mapping_url}/${id}`,
       });
-      
-      console.log(response.data);
   
       dispatch({
-        type: GET_CONTRACT_BY_ID,
+        type: GET_MAPPING_BY_ID,
         payload: response.data,
       });
   

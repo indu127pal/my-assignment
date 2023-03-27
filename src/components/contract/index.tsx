@@ -11,21 +11,19 @@ import { RootState } from '../../store/types';
 
 import styles from '@/styles/Form.module.css'
 import ContractForm from './contractForm'
-import ContractTable from './contractTable'
+import ContractTable from './ContractTable'
 
 const Contracts = () => {
   const dispatch = useDispatch();
 
-  const { loading, error, showForm, contracts } = useSelector(
+  const { loading, error, showForm } = useSelector(
     (state: RootState) => state.sampleData,
   );
-  console.log(loading, showForm);
-
-  //const [ showForm, setShowForm ] = useState(showForm);
   
   useEffect(() => {
     dispatch(getContractsData());
-  }, []);
+  }, [dispatch]);
+
   const handleAddContract = () => {
     dispatch(clearForm());
     dispatch(openForm());

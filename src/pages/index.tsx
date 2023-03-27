@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 import { getContractsData } from '../store/actions/action';
 import { getServicesData } from '../store/actions/serviceAction';
-import MiniDrawer from '../components/MiniDrawer';
+import MiniDrawer from '../components/common/MiniDrawer';
 import Card from '../components/common/card';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,7 +19,7 @@ export default function Home() {
     useEffect(() => {
         dispatch(getContractsData());
         dispatch(getServicesData());
-    }, [])
+    }, [dispatch])
   return (
     <>
       <Head>
@@ -36,7 +36,7 @@ export default function Home() {
               <div style={{marginBottom: "20px", width: '250px'}}>
                 <button type="button" 
                   className={style.button}>
-                  Go to Contracts Table Data
+                  Contracts Table Data
                 </button>
               </div>
             </Link>
@@ -44,7 +44,15 @@ export default function Home() {
               <div style={{marginBottom: "20px", width: '250px'}}>
                 <button type="button" 
                   className={style.button}>
-                  Go to Services Table Data
+                  Services Table Data
+                </button>
+              </div>
+            </Link>
+            <Link href="/mapping">
+              <div style={{marginBottom: "20px", width: '250px'}}>
+                <button type="button" 
+                  className={style.button}>
+                  Mapping Table Data
                 </button>
               </div>
             </Link>

@@ -1,13 +1,6 @@
 import React from 'react';
-import styles from '@/styles/Home.module.css'
-import MiniDrawer from '../../components/MiniDrawer';
+import MiniDrawer from '../../components/common/MiniDrawer';
 import Contracts from '../../components/contract'
-
-// const getData = async () => {
-//   const res = await fetch(`http://localhost:3030/contractWorkers/`)
-//   const data = await res.json();
-//   return data;
-// }
 
 const ContractsPage = () => {
   return (

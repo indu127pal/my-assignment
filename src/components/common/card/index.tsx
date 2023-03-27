@@ -10,7 +10,6 @@ const Card = () => {
     const { loading, error, contracts, services } = useSelector(
         (state: RootState) => state.sampleData,
       );
-    console.log(loading, contracts, services)
     const { active = '', inactive = '', draft = '', approved = '' } = calculateTotal(contracts, services);
     return (
         <>

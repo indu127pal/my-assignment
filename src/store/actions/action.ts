@@ -15,8 +15,8 @@ import axios from 'axios';
 
 // all the api endpoints
 
-// const BASE_URL = "http://localhost:3030";
-const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+const BASE_URL = "http://localhost:3030";
+//const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
 const contract_url = BASE_URL + "/contractWorkers/";
 const service_url = BASE_URL + "/serviceContracts/";
 const mapping_url = BASE_URL + "/workerContractMappings/";
@@ -37,7 +37,6 @@ export const getContractsData = () => async (dispatch) => {
   try {
     dispatch({ type: API_REQUEST });
     const response = await axios.get(contract_url);
-    //console.log(response.data);
     
     dispatch({
       type: GET_CONTRACT_SUCCESS,
@@ -61,7 +60,7 @@ export const addContractsData = (data) => async (dispatch) => {
       url: contract_url,
       data: data
     });
-    console.log(response.data);
+
     dispatch({ type: POST_CONTRACT_SUCCESS });
     await dispatch(getContractsData());
 
@@ -82,7 +81,7 @@ export const removeContractsData = (id) => async (dispatch) => {
       method: 'delete',
       url: `${contract_url}/${id}`
     });
-    console.log(response.data);
+
     dispatch({
       type: DELETE_CONTRACT_SUCCESS
     });
@@ -107,7 +106,6 @@ export const editContractsData = (id, contractForm) => async (dispatch) => {
       url: `${contract_url}/${id}`,
       data: contractForm
     });
-    console.log(response.data);
 
     dispatch({
       type: EDIT_CONTRACT_SUCCESS
@@ -132,8 +130,6 @@ export const getContractDataById = (id) => async (dispatch) => {
       method: 'get',
       url: `${contract_url}/${id}`,
     });
-    
-    console.log(response.data);
 
     dispatch({
       type: GET_CONTRACT_BY_ID,

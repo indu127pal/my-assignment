@@ -18,6 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import Link from 'next/link'
 
 const drawerWidth = 240;
@@ -120,12 +121,12 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{fontWeight: "bold"}}>
             Intuit Service
           </Typography>
           <Link href="/">
           <section style={{ textAlign: "center", position: "absolute", right: "100px", bottom: "15px"}}>
-            <span style={{ fontSize: "18px"}}>Back to Home</span>
+            <span style={{ fontSize: "18px", fontWeight: "bold"}}>Back to Home</span>
             <HomeIcon sx={{ marginLeft: '20px'}} fontSize="medium" />
           </section>
           </Link>
@@ -139,7 +140,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {[{key:'/contract', value: 'Contract Workers'}, { key: '/service', value: 'Service Contracts'}, {key: '/', value:'Worker-Contract'}].map(({key, value}) => (
+          {[{key:'/contract', value: 'Contract Workers'}, { key: '/service', value: 'Service Contracts'}, {key: '/mapping', value:'Worker-Contract'}].map(({key, value}) => (
             <Link key={value} href={key}>
               <ListItem key={value} disablePadding sx={{ display: 'block' }}>
                 <ListItemButton
@@ -156,7 +157,7 @@ export default function MiniDrawer() {
                       justifyContent: 'center',
                     }}
                   >
-                     <AccountCircleIcon />
+                     { `${key}`=== '/mapping' ? <ManageAccountsIcon />  : <AccountCircleIcon />}
                   </ListItemIcon>
                   <ListItemText primary={value} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>

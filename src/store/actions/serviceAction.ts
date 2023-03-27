@@ -15,15 +15,14 @@ import {
   import axios from 'axios';
   
   // all the api endpoints
-  
-  const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+  const BASE_URL = "http://localhost:3030";
+  //const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
   const service_url = BASE_URL + "/serviceContracts/";
   
   export const getServicesData = () => async (dispatch) => {
     try {
       dispatch({ type: API_REQUEST });
       const response = await axios.get(service_url);
-      //console.log(response.data);
       
       dispatch({
         type: GET_SERVICE_SUCCESS,
@@ -47,7 +46,7 @@ import {
         url: service_url,
         data: data
       });
-      console.log(response.data);
+
       dispatch({ type: POST_SERVICE_SUCCESS });
       await dispatch(getServicesData());
   
@@ -68,7 +67,7 @@ import {
         method: 'delete',
         url: `${service_url}/${id}`
       });
-      console.log(response.data);
+
       dispatch({
         type: DELETE_SERVICE_SUCCESS
       });
@@ -93,7 +92,6 @@ import {
         url: `${service_url}/${id}`,
         data: form
       });
-      console.log(response.data);
   
       dispatch({
         type: EDIT_SERVICE_SUCCESS
@@ -118,8 +116,6 @@ import {
         method: 'get',
         url: `${service_url}/${id}`,
       });
-      
-      console.log(response.data);
   
       dispatch({
         type: GET_SERVICE_BY_ID,

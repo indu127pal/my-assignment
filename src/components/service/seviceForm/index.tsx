@@ -2,9 +2,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addServicesData, editServicesData } from '../../../store/actions/serviceAction';
+import { checkEmail } from '../../../utils';
 import styles from '@/styles/Form.module.css'
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
+
+const statusType = ['active', 'inactive', 'draft', 'approved'];
 
 const ServiceForm = ({ open, onClose }) => {
   const dispatch = useDispatch();
@@ -12,17 +15,29 @@ const ServiceForm = ({ open, onClose }) => {
   const { loading, error, showForm, services, serviceForm } = useSelector(
     (state) => state.sampleData,
   );
-  console.log(loading, error);
 
   const [ownerName, setOwnerName] = useState('' || serviceForm.ownerName);
   const [status, setStatus] = useState('' || serviceForm.status);
   const [email, setEmail] = useState('' || serviceForm.email);
-  const [isEdit, setIsEdit] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const validateData = () => {
-    
+    if (!ownerName || !status || !email) {
+      setErrorMsg('Please fill all the fields');
+      return false;
+    } else {
+      if (checkEmail(email)) {
+        setErrorMsg('Email-Id is not valid')
+        return false;
+      } else {
+        setErrorMsg('');
+        return true;
+      }
+    }
   }
   const handleOnboardClick = () => {
+    let valid = validateData();
+    if (!valid) return;
     let data;
     if (Object.keys(serviceForm).length) {
       data = {
@@ -48,11 +63,6 @@ const ServiceForm = ({ open, onClose }) => {
     onClose(!open);
   };
 
-  // const handleOffboardClick = () => {
-  //   setIsOnboarding(false);
-  //   // logic for submitting form data to API or data store goes here
-  // };
-
   const handleClose = () => {
     onClose();
   };
@@ -63,7 +73,7 @@ const ServiceForm = ({ open, onClose }) => {
         <button className={styles.cancel} type="button" onClick={handleClose}>
           <CloseIcon fontSize="medium" />
         </button>
-        <h2 className={styles.title}>Onboard Contract form</h2>
+        <h2 className={styles.title}>Add Service form</h2>
         <form className={styles.form}>
           <div className={styles.formcontrol}>
             <label htmlFor="ownerName">Owner Name</label>
@@ -76,12 +86,13 @@ const ServiceForm = ({ open, onClose }) => {
           </div>
           <div className={styles.formcontrol}>
             <label htmlFor="status">Status</label>
-            <input
-              type="text"
-              id="status"
-              value={status}
+            <select id="status" 
+              className={styles.formcontrol} 
+              style={{ height: "40px"}}
               onChange={(e) => setStatus(e.target.value)}
-            />
+            >
+              {statusType.map((statusVal, index) => <option key={index} value={statusVal}>{statusVal}</option>)}
+            </select>
           </div>
           <div className={styles.formcontrol}>
             <label htmlFor="email">Email</label>
@@ -91,6 +102,9 @@ const ServiceForm = ({ open, onClose }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </div>
+          <div className={styles.formcontrol}>
+            <label htmlFor="error" className={styles.errorMessage}>{errorMsg}</label>
           </div>
           <div className={styles.btncontainer}>
             <button type="button" className={styles.button} onClick={handleOnboardClick}>

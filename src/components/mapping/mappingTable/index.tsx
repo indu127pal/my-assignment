@@ -1,15 +1,15 @@
 // @ts-nocheck
 import React, { useState, useMemo } from 'react';
 import styles from '@/styles/Table.module.css';
-import { removeContractsData, getContractDataById } from '../../../store/actions/action';
+import { removeMappingsData, getMappingDataById } from '../../../store/actions/mappingAction';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store/types';
 import Pagination from '../../common/pagination';
 import { PageSize } from '../../../utils'
 
-const ContractTable = () => {
+const MappingTable = () => {
   const dispatch = useDispatch();
-  const { loading, error, contracts } = useSelector(
+  const { loading, error, workerContractMappings } = useSelector(
     (state: RootState) => state.sampleData,
   );
 
@@ -19,11 +19,11 @@ const ContractTable = () => {
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return contracts.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, contracts]);
+    return workerContractMappings.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, workerContractMappings]);
 
   const renderHeader = () => {
-       let headerElement = ['id', 'empid', 'firstName', 'lastName', 'role', 'email', 'startDate', 'action']
+       let headerElement = ['id', 'empid', 'contractid', 'allocation', 'action']
 
        return headerElement.map((key, index) => {
            return <th key={index}>{key.toUpperCase()}</th>
@@ -34,25 +34,22 @@ const ContractTable = () => {
         <>
           {loading && <div> start loading data </div>}
           {!loading && currentTableData && 
-            currentTableData.map(({ id, employeeNumber, firstName, lastName, role, email, startDate }) => {
+            currentTableData.map(({ id, employeeNumber, contractNumber, allocation }) => {
             return (
                 <tr key={id}>
                     <td>{id}</td>
                     <td>{employeeNumber}</td>
-                    <td>{firstName}</td>
-                    <td>{lastName}</td>
-                    <td>{role}</td>
-                    <td>{email}</td>
-                    <td>{startDate}</td>
+                    <td>{contractNumber}</td>
+                    <td>{allocation}</td>
                     <td className={styles.operation}>
-                        <button 
+                        {/* <button 
                           className={styles.edit} 
-                          onClick={() => dispatch(getContractDataById(id))}>
+                          onClick={() => dispatch(getMappingDataById(id))}>
                               Edit
-                          </button>
+                        </button> */}
                         <button 
                           className={styles.delete} 
-                          onClick={() => dispatch(removeContractsData(id))}>
+                          onClick={() => dispatch(removeMappingsData(id))}>
                               Delete
                           </button>
                     </td>
@@ -77,7 +74,7 @@ const ContractTable = () => {
            <div className={styles.pagination}>
              <Pagination
               currentPage={currentPage}
-              totalCount={contracts.length}
+              totalCount={workerContractMappings.length}
               pageSize={PageSize}
               onPageChange={(page) => setCurrentPage(page)}
             />
@@ -86,4 +83,4 @@ const ContractTable = () => {
    )
 }
 
-export default ContractTable;
+export default MappingTable;

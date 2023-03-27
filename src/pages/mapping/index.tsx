@@ -1,15 +1,15 @@
 import React from 'react';
 import MiniDrawer from '../../components/common/MiniDrawer';
-import Service from '../../components/service';
+import Mapping from '../../components/mapping';
 
-const ServicePage = () => {
+const MappingPage = () => {
   return (
     <main style={{ textAlign: 'center' }}>
       <MiniDrawer />
-      <h2>Service Contracts Page</h2>
-      <Service />
+      <h2>Worker-Contract Mappings Page</h2>
+      <Mapping />
     </main>
   );
 };
 
-export default ServicePage;
+export default MappingPage;

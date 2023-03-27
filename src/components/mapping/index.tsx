@@ -8,13 +8,13 @@ import {
   closeForm
 } from '../../store/actions/action';
 import {
-  getServicesData
-} from '../../store/actions/serviceAction';
-import ServiceForm from './seviceForm';
-import ServiceTable from './serviceTable'
+  getMappingsData
+} from '../../store/actions/mappingAction';
+//import ServiceForm from './seviceForm';
+import MappingTable  from './mappingTable';
 import { RootState } from '../../store/types';
 
-const Service = () => {
+const Mapping = () => {
   const dispatch = useDispatch();
 
   const { loading, error, showForm } = useSelector(
@@ -22,9 +22,9 @@ const Service = () => {
   );
   
   useEffect(() => {
-    dispatch(getServicesData());
+    dispatch(getMappingsData());
   }, [dispatch]);
-  
+
   const handleAddService = () => {
     dispatch(clearForm());
     dispatch(openForm());
@@ -33,20 +33,19 @@ const Service = () => {
   return (
     <>
       {loading && <div> start loading data </div>}
-      {!loading && <main className={styles.maincontainer}>
+      {!loading && <main className={styles.maincontainer} style={{ marginTop: "20px"}}>
         {/* form UI is done */}
-        <div style={{marginBottom: "20px", width: '250px'}}>
+        {/* <div style={{marginBottom: "20px", width: '250px'}}>
           <button type="button" className={styles.button} onClick={handleAddService}>
-            Add Services +
+            Add worker-contract +
           </button>
-        </div>
-        {showForm && <ServiceForm open={showForm} onClose={() => dispatch(closeForm())}/>}
+        </div> */}
+        {/* {showForm && <ServiceForm open={showForm} onClose={() => dispatch(closeForm())}/>} */}
         
-        <ServiceTable />
+        <MappingTable />
       </main>}
     </>
   );
 };
 
-export default Service;
-
+export default Mapping;

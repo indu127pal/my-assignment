@@ -6,7 +6,7 @@
       "lastName": "Doe",
       "role": "Software Engineer",
       "startDate": "2023-01-01",
-      "email": "johnDoe@hotmail.com",
+      "email": "johnDoe11312@hotmail.com",
       "employeeNumber": "CW1001"
     },
     {
@@ -137,21 +137,102 @@
     },
     {
       "id": 16,
-      "firstName": "Indu",
-      "lastName": "Pal",
-      "role": "Software Engineer",
-      "startDate": "20/05/2002",
-      "email": "indu.palo69696@gmail.com",
-      "employeeNumber": "CW10016"
+      "firstName": "Evanne",
+      "lastName": "De Beneditti",
+      "email": "edebeneditti0@theatlantic.com",
+      "role": "VP Sales",
+      "employeeNumber": "CW10016",
+      "startDate": "5/31/2022"
     },
     {
       "id": 17,
+      "firstName": "Reider",
+      "lastName": "Braisted",
+      "email": "rbraisted1@multiply.com",
+      "role": "Executive Secretary",
+      "employeeNumber": "CW10017",
+      "startDate": "9/6/2022"
+    },
+    {
+      "id": 18,
+      "firstName": "Clementius",
+      "lastName": "Gorrick",
+      "email": "cgorrick2@example.com",
+      "role": "Electrical Engineer",
+      "employeeNumber": "CW10018",
+      "startDate": "3/16/2020"
+    },
+    {
+      "id": 19,
+      "firstName": "Doti",
+      "lastName": "Andreichik",
+      "email": "dandreichik3@homestead.com",
+      "role": "Paralegal",
+      "employeeNumber": "CW10019",
+      "startDate": "10/22/2022"
+    },
+    {
+      "id": 20,
+      "firstName": "Zitella",
+      "lastName": "Pallin",
+      "email": "zpallin4@salon.com",
+      "role": "Executive Secretary",
+      "employeeNumber": "CW10020",
+      "startDate": "2/3/2021"
+    },
+    {
+      "id": 21,
+      "firstName": "Fina",
+      "lastName": "Gidney",
+      "email": "fgidney5@hostgator.com",
+      "role": "Environmental Specialist",
+      "employeeNumber": "CW10021",
+      "startDate": "7/1/2021"
+    },
+    {
+      "id": 22,
+      "firstName": "Byrle",
+      "lastName": "De Cleen",
+      "email": "bdecleen6@prlog.org",
+      "role": "Electrical Engineer",
+      "employeeNumber": "CW10022",
+      "startDate": "7/22/2022"
+    },
+    {
+      "id": 23,
+      "firstName": "Katine",
+      "lastName": "Barlthrop",
+      "email": "kbarlthrop7@furl.net",
+      "role": "Staff Scientist",
+      "employeeNumber": "CW10023",
+      "startDate": "4/22/2022"
+    },
+    {
+      "id": 24,
+      "firstName": "Gino",
+      "lastName": "Vannuchi",
+      "email": "gvannuchi8@constantcontact.com",
+      "role": "Information Systems Manager",
+      "employeeNumber": "CW10024",
+      "startDate": "9/18/2020"
+    },
+    {
+      "id": 25,
+      "firstName": "Derrik",
+      "lastName": "Strafen",
+      "email": "dstrafen9@nhs.uk",
+      "role": "GIS Technical Architect",
+      "employeeNumber": "CW10025",
+      "startDate": "3/15/2022"
+    },
+    {
+      "id": 26,
       "firstName": "Indu",
-      "lastName": "Pal",
-      "role": "Software Engineer",
-      "startDate": "20/05/2002",
-      "email": "johnDoe@thkhk.com",
-      "employeeNumber": "CW10017"
+      "lastName": "katiyar",
+      "role": "Data Science",
+      "startDate": "2023-03-08",
+      "email": "kgkindu@gmail.com",
+      "employeeNumber": "CW10026"
     }
   ],
   "serviceContracts": [
@@ -165,11 +246,11 @@
     },
     {
       "id": 2,
-      "contractNumber": "SC1002",
-      "status": "inactive",
-      "ownerId": 2,
       "ownerName": "James",
-      "email": "James@thkhk.com"
+      "ownerId": 2,
+      "status": "approved",
+      "email": "James@thkhk.com",
+      "contractNumber": "SC1002"
     },
     {
       "id": 3,
@@ -303,6 +384,36 @@
     },
     {
       "id": 5,
+      "employeeNumber": "CW1002",
+      "contractNumber": "SC1004",
+      "allocation": 100
+    },
+    {
+      "id": 6,
+      "employeeNumber": "CW1001",
+      "contractNumber": "SC1001",
+      "allocation": 100
+    },
+    {
+      "id": 7,
+      "employeeNumber": "CW1002",
+      "contractNumber": "SC1001",
+      "allocation": 100
+    },
+    {
+      "id": 8,
+      "employeeNumber": "CW1003",
+      "contractNumber": "SC1002",
+      "allocation": 100
+    },
+    {
+      "id": 9,
+      "employeeNumber": "CW1001",
+      "contractNumber": "SC1003",
+      "allocation": 100
+    },
+    {
+      "id": 10,
       "employeeNumber": "CW1002",
       "contractNumber": "SC1004",
       "allocation": 100
