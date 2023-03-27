@@ -15,8 +15,8 @@ import {
   import axios from 'axios';
   
   // all the api endpoints
-  const BASE_URL = "http://localhost:3030";
-  //const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+  //const BASE_URL = "http://localhost:3030";
+  const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
   const service_url = BASE_URL + "/serviceContracts/";
   
   export const getServicesData = () => async (dispatch) => {
