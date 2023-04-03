@@ -15,9 +15,9 @@ import {
   import axios from 'axios';
   
   // all the api endpoints
-  //const BASE_URL = "http://localhost:3030";
-  const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
-  const service_url = BASE_URL + "/serviceContracts/";
+  const BASE_URL = "http://localhost:3030";
+  //const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+  const service_url = BASE_URL + "/serviceContracts";
   
   export const getServicesData = () => async (dispatch) => {
     try {
@@ -86,7 +86,7 @@ import {
       dispatch({
         type: API_REQUEST,
       });
-      debugger;
+  
       const response = await axios({
         method: 'put',
         url: `${service_url}/${id}`,
@@ -111,7 +111,7 @@ import {
       dispatch({
         type: API_REQUEST,
       });
-      debugger;
+
       const response = await axios({
         method: 'get',
         url: `${service_url}/${id}`,

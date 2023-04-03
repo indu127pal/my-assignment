@@ -15,9 +15,9 @@ import axios from 'axios';
 
 // all the api endpoints
 
-//const BASE_URL = "http://localhost:3030";
-const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
-const contract_url = BASE_URL + "/contractWorkers/";
+const BASE_URL = "http://localhost:3030";
+// const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+const contract_url = BASE_URL + "/contractWorkers";
 
 export const clearForm = () => async (dispatch) => {
   dispatch({ type: CLEAR_FORM });
@@ -98,7 +98,7 @@ export const editContractsData = (id, contractForm) => async (dispatch) => {
     dispatch({
       type: API_REQUEST,
     });
-    debugger;
+   
     const response = await axios({
       method: 'put',
       url: `${contract_url}/${id}`,
@@ -123,7 +123,7 @@ export const getContractDataById = (id) => async (dispatch) => {
     dispatch({
       type: API_REQUEST,
     });
-    debugger;
+
     const response = await axios({
       method: 'get',
       url: `${contract_url}/${id}`,

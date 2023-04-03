@@ -22,9 +22,9 @@ const Service = () => {
     (state: RootState) => state.sampleData,
   );
   
-  useEffect(() => {
-    dispatch(getServicesData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getServicesData());
+  // }, [dispatch]);
   
   const handleAddService = () => {
     dispatch(clearForm());

@@ -16,9 +16,9 @@ import {
   
   // all the api endpoints
   
- //const BASE_URL = "http://localhost:3030";
-  const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
-  const mapping_url = BASE_URL + "/workerContractMappings/";
+  const BASE_URL = "http://localhost:3030";
+  //const BASE_URL = "https://my-json-server.typicode.com/indu127pal/my-assignment"
+  const mapping_url = BASE_URL + "/workerContractMappings";
   
   export const clearForm = () => async (dispatch) => {
     dispatch({ type: CLEAR_FORM });
@@ -99,7 +99,7 @@ import {
       dispatch({
         type: API_REQUEST,
       });
-      debugger;
+      
       const response = await axios({
         method: 'put',
         url: `${mapping_url}/${id}`,
@@ -124,7 +124,7 @@ import {
       dispatch({
         type: API_REQUEST,
       });
-      debugger;
+  
       const response = await axios({
         method: 'get',
         url: `${mapping_url}/${id}`,

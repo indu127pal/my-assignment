@@ -26,10 +26,10 @@ const Mapping = () => {
     dispatch(getMappingsData());
   }, [dispatch]);
 
-  const handleAddService = () => {
-    dispatch(clearForm());
-    dispatch(openForm());
-  }
+  // const handleAddService = () => {
+  //   dispatch(clearForm());
+  //   dispatch(openForm());
+  // }
 
   return (
     <>
