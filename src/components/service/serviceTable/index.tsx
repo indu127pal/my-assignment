@@ -5,6 +5,7 @@ import { removeServicesData, getServiceDataById } from '../../../store/actions/s
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store/types';
 import Pagination from '../../common/pagination';
+import Loader from '../../common/Loader';
 import { PageSize } from '../../../utils'
 
 const ServiceTable = () => {
@@ -33,7 +34,7 @@ const ServiceTable = () => {
    const renderBody = () => {
        return (
         <>
-          {loading && <div> start loading data </div>}
+          {loading && <Loader show={loading} />}
           {!loading && currentTableData && 
             currentTableData.map(({ id, contractNumber, status, ownerId, ownerName, email }) => {
             return (

@@ -12,6 +12,7 @@ import {
 } from '../../store/actions/mappingAction';
 //import ServiceForm from './seviceForm';
 import MappingTable  from './mappingTable';
+import Loader from '../common/Loader';
 import { RootState } from '../../store/types';
 
 const Mapping = () => {
@@ -32,7 +33,7 @@ const Mapping = () => {
 
   return (
     <>
-      {loading && <div> start loading data </div>}
+      {loading && <Loader show={loading} />}
       {!loading && <main className={styles.maincontainer} style={{ marginTop: "20px"}}>
         {/* form UI is done */}
         {/* <div style={{marginBottom: "20px", width: '250px'}}>

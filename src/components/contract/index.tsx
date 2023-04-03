@@ -9,9 +9,10 @@ import {
 } from '../../store/actions/action';
 import { RootState } from '../../store/types';
 
-import styles from '@/styles/Form.module.css'
-import ContractForm from './contractForm'
-import ContractTable from './ContractTable'
+import styles from '@/styles/Form.module.css';
+import ContractForm from './contractForm';
+import ContractTable from './ContractTable';
+import Loader from '../common/Loader';
 
 const Contracts = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Contracts = () => {
   }
   return (
     <>
-      {loading && <div> start loading data </div>}
+      {loading && <Loader show={loading} />}
       {!loading && <main className={styles.maincontainer}>
         {/* form UI is done */}
         <div style={{marginBottom: "20px", width: '250px'}}>

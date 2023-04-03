@@ -12,6 +12,7 @@ import {
 } from '../../store/actions/serviceAction';
 import ServiceForm from './seviceForm';
 import ServiceTable from './serviceTable'
+import Loader from '../common/Loader';
 import { RootState } from '../../store/types';
 
 const Service = () => {
@@ -32,7 +33,7 @@ const Service = () => {
 
   return (
     <>
-      {loading && <div> start loading data </div>}
+      {loading && <Loader show={loading} />}
       {!loading && <main className={styles.maincontainer}>
         {/* form UI is done */}
         <div style={{marginBottom: "20px", width: '250px'}}>

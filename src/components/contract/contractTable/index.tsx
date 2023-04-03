@@ -5,6 +5,7 @@ import { removeContractsData, getContractDataById } from '../../../store/actions
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store/types';
 import Pagination from '../../common/pagination';
+import Loader from '../../common/Loader';
 import { PageSize } from '../../../utils'
 
 const ContractTable = () => {
@@ -32,7 +33,7 @@ const ContractTable = () => {
    const renderBody = () => {
        return (
         <>
-          {loading && <div> start loading data </div>}
+          {loading && <Loader show={loading} />}
           {!loading && currentTableData && 
             currentTableData.map(({ id, employeeNumber, firstName, lastName, role, email, startDate }) => {
             return (
