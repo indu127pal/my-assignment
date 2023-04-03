@@ -5,7 +5,7 @@ import { removeContractsData, getContractDataById } from '../../../store/actions
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store/types';
 import Pagination from '../../common/pagination';
-import Loader from '../../common/Loader';
+import Loader from '../../common/loader';
 import { PageSize } from '../../../utils'
 
 const ContractTable = () => {

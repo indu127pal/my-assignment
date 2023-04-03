@@ -12,7 +12,7 @@ import {
 } from '../../store/actions/mappingAction';
 //import ServiceForm from './seviceForm';
 import MappingTable  from './mappingTable';
-import Loader from '../common/Loader';
+import Loader from '../common/loader';
 import { RootState } from '../../store/types';
 
 const Mapping = () => {

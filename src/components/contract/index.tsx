@@ -11,8 +11,8 @@ import { RootState } from '../../store/types';
 
 import styles from '@/styles/Form.module.css';
 import ContractForm from './contractForm';
-import ContractTable from './ContractTable';
-import Loader from '../common/Loader';
+import ContractTable from './contractTable';
+import Loader from '../common/loader';
 
 const Contracts = () => {
   const dispatch = useDispatch();

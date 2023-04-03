@@ -12,7 +12,7 @@ import {
 } from '../../store/actions/serviceAction';
 import ServiceForm from './seviceForm';
 import ServiceTable from './serviceTable'
-import Loader from '../common/Loader';
+import Loader from '../common/loader';
 import { RootState } from '../../store/types';
 
 const Service = () => {
