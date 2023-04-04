@@ -21,9 +21,9 @@ const Contracts = () => {
     (state: RootState) => state.sampleData,
   );
   
-  // useEffect(() => {
-  //   dispatch(getContractsData());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getContractsData());
+  }, [dispatch]);
 
   const handleAddContract = () => {
     dispatch(clearForm());
